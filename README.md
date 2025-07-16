@@ -17,7 +17,7 @@ To fetch and display **comparable industrial property records** based on user qu
 - **React (Client Components)**
 - **Node.js + API routes**
 - **CSV file (Cook County data) for backend**
-- Deployment: GitHub Pages / Vercel (optional)
+- **Deployment: Vercel** 
 
 ---
 
@@ -38,7 +38,7 @@ Used: `clean_industrial_properties.csv` (Cook County scraped dataset)
 
 ## 📸 Demo Video
 
-Check out the [📹 Loom Walkthrough](#) *(link here)*
+Check out the [📹 Loom Walkthrough](https://starboard-ai-three.vercel.app/) 
 
 ---
 
