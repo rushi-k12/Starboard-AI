@@ -41,9 +41,11 @@ export default function Home() {
 
       const data = await res.json();
       setResults(data);
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
+        } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      setError(errorMsg);
+    }
+ finally {
       setLoading(false);
     }
   };
