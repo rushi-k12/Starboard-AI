@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 import fs from 'fs';
-const Papa = require('papaparse');
+import Papa from 'papaparse';
 import * as tf from '@tensorflow/tfjs';
 
 const loadCSV = () => {
