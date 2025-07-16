@@ -37,8 +37,10 @@ export async function POST(req: NextRequest) {
     }));
 
     return NextResponse.json(topListings);
-  } catch (err: any) {
-    console.error('CSV API Error:', err.message);
-    return NextResponse.json({ error: 'Server error', details: String(err?.message || err) }, { status: 500 });
+    } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    console.error('CSV API Error:', errorMessage);
+    return NextResponse.json({ error: 'Server error', details: errorMessage }, { status: 500 });
   }
+
 }
