@@ -2,7 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
-import Papa from 'papaparse';
+const Papa = require('papaparse');
 
 interface Property {
   address: string;
