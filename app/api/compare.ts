@@ -5,15 +5,14 @@ import fs from 'fs';
 import Papa from 'papaparse';
 import * as tf from '@tensorflow/tfjs';
 
-// Load and parse CSV
 const loadCSV = () => {
   const filePath = path.join(process.cwd(), 'public', 'clean_industrial_properties.csv');
   const csvData = fs.readFileSync(filePath, 'utf8');
-  const { data } = Papa.parse(csvData, { header: true });
-  return data.filter((row: any) => row.square_feet && row.land_area && row.year_built);
+  const { data } = Papa.parse<Record<string, string>>(csvData, { header: true });
+  return data.filter((row) => row.square_feet && row.land_area && row.year_built);
 };
 
-const getNumeric = (row: any, keys: string[]) =>
+const getNumeric = (row: Record<string, string>, keys: string[]) =>
   keys.map((k) => parseFloat(row[k]) || 0);
 
 const normalize = (X: number[][]) => {
